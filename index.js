@@ -3,6 +3,7 @@ require('dotenv').config();
 const path = require("path");
 const cors = require('cors');
 const useRouter = require('./router/Approuter');
+const ejsDynamicRouter = require('./router/Ejsdynamicrouter');
 
 
 // Initialize the Express application
@@ -29,6 +30,7 @@ app.use(cors({
 
 // Use the router from Approuter.js
 app.use('/api', useRouter.router);
+app.use('/ejs',ejsDynamicRouter);
 
 
 
